@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso HTML</title>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      label {
+        display: block;
+      }
+
+      iframe {
+        width: 100%;
+        aspect-ratio: 16/9;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Portafolio de @armandodev</h1>
+
+      <nav>
+        <ul class="list">
+          <li class="list-item">
+            <a href="#experience">Experiencia</a>
+          </li>
+          <li class="list-item">
+            <a
+              href="http://www.x.com/armandodev_"
+              target="_blank"
+              rel="noreferrer"
+              >Twitter</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Para modales -->
+    <dialog id="dialog">
+      <h2>Modal</h2>
+      <p>Contenido del modal</p>
+      <button id="hide">Cerrar</button>
+    </dialog>
+
+    <button id="show">Abrir modal</button>
+
+    <script>
+      window.show.addEventListener("click", () => {
+        window.dialog.showModal();
+      });
+
+      window.hide.addEventListener("click", () => {
+        window.dialog.close();
+      });
+    </script>
+
+    <main>
+      <img
+        id="yo-img"
+        src="./images/yo.jpg"
+        alt="Imagen de Jorge Armando Ceras Cárdenas"
+        title="Foto de armandodev"
+        width="300"
+        height="300"
+      />
+      <!--
+        Atributo loading en imagen y iframe, mzn
+        https://midu.dev/lazy-loading-imagenes-html/
+      -->
+      <section id="experience">
+        <h2>Experiencia</h2>
+
+        <p>
+          +2 años de experiencia como <strong>Desarrollador web</strong>.
+          Estudiante de programación.
+        </p>
+
+        <ul class="list">
+          <li class="list-item">Twitter - 2022</li>
+          <li class="list-item">Facebook - 2020</li>
+          <li class="list-item">Google - 2019</li>
+        </ul>
+      </section>
+
+      <section id="frequent-questions">
+        <h2>Preguntas frecuentes</h2>
+
+        <details>
+          <summary>¿Qué estudios tienes?</summary>
+          <p>Estudié ingeniería en sistemas en el Tecnológico de Jiquilpan</p>
+        </details>
+
+        <details>
+          <summary>¿Cuál es tu lenguaje favorito?</summary>
+          <p>Me gusta mucho JavaScript</p>
+        </details>
+
+        <details>
+          <summary>¿Cuál es tu framework favorito?</summary>
+          <p>Me gusta mucho React</p>
+        </details>
+
+        <details>
+          <summary>¿Cuál es tu editor de código favorito?</summary>
+          <p>Me gusta mucho VS Code</p>
+        </details>
+
+        <details>
+          <summary>¿Cuál es tu sistema operativo favorito?</summary>
+          <p>Me gusta mucho Windows</p>
+        </details>
+      </section>
+
+      <!-- <section id="courses">
+        <h2>HTML</h2>
+
+        <iframe
+          src="https://www.youtube.com/embed/3nYLTiY5skU?si=-JuWvdlDfYt3BltZ"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </section> -->
+
+      <section id="contact-form">
+        <h2>Contacto</h2>
+
+        <form action="/" method="post">
+          <fieldset>
+            <legend>Información personal</legend>
+
+            <label>
+              Nombre:
+              <input
+                type="text"
+                name="name"
+                placeholder="Miguel Ángel Durán"
+                required
+                pattern="[A-Za-z ]{2,}"
+              />
+            </label>
+            <label>
+              Email:
+              <input
+                type="text"
+                name="email"
+                placeholder="miguel@gmail.com"
+                required
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              />
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Información adicional</legend>
+
+            <label>
+              Teléfono:
+              <input
+                type="text"
+                name="phone"
+                placeholder="5512345678"
+                required
+                pattern="[0-9]{10}"
+              />
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Otros</legend>
+
+            <label>
+              ¿Cómo te enteraste de mí?
+              <select name="source" required>
+                <option value="">Selecciona una opción</option>
+                <option value="1">Twitter</option>
+                <option value="2">Facebook</option>
+                <option value="3">Google</option>
+                <option value="4">Referidos</option>
+                <option value="5">Otros</option>
+              </select>
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Mensaje</legend>
+
+            <datalist id="subject">
+              <option value="Quiero contratarte"></option>
+              <option value="Quiero invitarte a un proyecto"></option>
+              <option value="Quiero saludarte"></option>
+            </datalist>
+            <label>
+              Asunto:
+              <input
+                list="subject"
+                name="subject"
+                placeholder="Asunto del mensaje"
+                required
+                pattern="[A-Za-z ]{2,}"
+              />
+            </label>
+            <label>
+              Mensaje:
+              <textarea
+                name="message"
+                cols="30"
+                rows="2"
+                placeholder="Escribe tu mensaje"
+                required
+                pattern="[A-Za-z ]{2,}"
+              ></textarea>
+            </label>
+          </fieldset>
+
+          <button>Enviar</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        <small>&copy; 2023 - @armandodev</small>
+      </p>
+    </footer>
+  </body>
+</html>
